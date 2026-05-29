@@ -26,3 +26,13 @@ jobs:
       
       - name: Build Notify
         run: docker build -t notify ./notify
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd frontend
+          npm install
+
+      - name: Run ESLint
+        run: |
+          cd frontend
+          npm run lint
