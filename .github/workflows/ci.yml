@@ -5,14 +5,24 @@ on:
   pull_request:
 
 jobs:
+
   validate:
 
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Check Files
-        run: ls -la
+      - name: Validate Docker Compose
+        run: docker compose config
+        
+      - name: Build Frontend
+        run: docker build -t frontend ./frontend 
+
+      - name: Build Backend
+        run: docker build -t backend ./backend
+
+      
+      - name: Build Notify
+        run: docker build -t notify ./notify
