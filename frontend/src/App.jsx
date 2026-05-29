@@ -6,7 +6,7 @@ function App() {
         padding: "40px",
       }}
     >
-      <h1>CixioHub Frontend Running</h1>
+      <h1>CixioHub Frontend Running </h1>
       
       
 
@@ -59,3 +59,5 @@ function App() {
 }
 
 export default App;
+
+
